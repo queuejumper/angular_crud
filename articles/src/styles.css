@@ -1,0 +1,36 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+	background: #EEEEEE;
+}
+
+.default-box {
+	margin-top: 20px;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.hide
+{
+	display: none;
+}
+.right{
+	float: right;
+}
+.upload-btn{
+	margin-bottom: 10px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}

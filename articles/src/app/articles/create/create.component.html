@@ -1,0 +1,21 @@
+<mat-card class="default-box" fxLayout="row" fxLayoutAlign="space-around center" fxFlex="65" fxFlexOffset="15">
+	<form encType="multipart/form-data" fxLayout="column" fxLayoutAlign="space-around left" fxFlex="65">
+		<h3>{{title}}</h3>
+		<mat-form-field>
+			<input matInput placeholder="Title" name="title" [(ngModel)]="article_title">
+		</mat-form-field>
+		<mat-form-field>
+			<textarea matInput placeholder="Description" name="description" [(ngModel)]="article_description"></textarea>
+		</mat-form-field>
+		<div fxLayout="row" fxLayoutAlign="space-around center" >
+			<input class="hide" id="article_image" type="file" [(ngModel)]="article_image" [ngModelOptions]="{standalone: true}" name="article_image" (change)="perview_image($event)"/>
+			<button  fxFlex="50" type="submit" mat-raised-button color="primary" class="right" (click)="createArticle()">
+				Publish
+			</button>
+		</div>
+	</form>
+	<div fxLayout="column" fxFlex="30" fxLayoutAlign="space-around">
+		<img [src]="img_path" fxFlex="45">
+		<label for="article_image" class="mat-raised-button mat-accent upload-btn" fxFlex="45">Choose Image</label>
+	</div>
+</mat-card>
