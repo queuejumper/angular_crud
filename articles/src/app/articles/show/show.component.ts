@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./show.component.css']
 })
 export class ShowComponent implements OnInit {
-	public articles;
+	public article;
   constructor(private articleservice: ArticleService,private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,17 +19,16 @@ export class ShowComponent implements OnInit {
   		if(id)
   			this.findArticle(id)
   		else
-  			this.articleservice.redirect(['/']);
+  			this.articleservice.redirect('/articles');
 
   	}
   	findArticle(id)
   	{
-      console.log(id);
   		this.articleservice.showArticleById(id)
   		.subscribe(
-  			data => {this.articles = data;console.log(JSON.stringify(data));},
+  			data => {this.article = JSON.stringify(data);console.log(data);},
   			err => {console.error(err)},
-  			() => {console.log('Articles loaded successfully');}
+  			() => {console.log('Article loaded successfully');}
   			);
   	}
 }

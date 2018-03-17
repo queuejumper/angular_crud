@@ -27,11 +27,10 @@ export class CreateComponent implements OnInit {
       "description": this.article_description,
       //"image": this.article_image
     };
-    //console.log(JSON.stringify(article));return;
     this.articleservice.createArticle(article)
     .subscribe(
         data => {
-          //console.log('created! %s',JSON.stringify(data));
+          console.log('created! %s',JSON.stringify(data));
           this.goArtilce(data);
         },
         err => {
@@ -52,6 +51,6 @@ export class CreateComponent implements OnInit {
   }
   goArtilce(data)
   {
-    this.articleservice.redirect('/show',data._id);
+    this.articleservice.redirectWith('/article/show',data.article._id);
   }
 }

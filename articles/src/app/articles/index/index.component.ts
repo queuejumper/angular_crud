@@ -34,9 +34,10 @@ export class IndexComponent implements OnInit {
       .subscribe(
           err => {console.error(err)},
           data => {
-          	console.log('Article deleted successfully');
-          	this.articleservice.redirect('/articles',null);
-          }
+          	console.log(JSON.stringify(data));
+          	this.articleservice.redirect('/articles');
+          },
+          () => {this.articleservice.redirect('/articles');}
         );
     }
 }

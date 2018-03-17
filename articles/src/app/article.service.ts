@@ -42,7 +42,11 @@ export class ArticleService {
     return this.http.put(url+article.id,article);
   }
 
-  redirect(to,param)
+  redirect(to)
+  {
+    this.router.navigate([to]);
+  }
+  redirectWith(to,param)
   {
     this.router.navigate([to,param]);
   }

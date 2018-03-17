@@ -4,7 +4,6 @@ var express = require('express'),
 	Article = require('../models/articleSchema');
 
 appRoutes.route('/create').post(function(req,res){
-	req.body.image.mv('public/img');
 	var article = new Article({
 		title: req.body.title,
 		description: req.body.description
